@@ -21,9 +21,9 @@ $contact = new Contact();
             ]
         ]); ?>
 
-        <?= $form->field($contact, 'name', ['template' => '{input}', 'options' => ['tag' => false]])->textInput(['class' => "input-reset feedback-form__inp", 'placeholder' => "Ваше имя", 'type' => 'text']); ?>
-        <?= $form->field($contact, 'phone', ['template' => '{input}', 'options' => ['tag' => false]])->textInput(['class' => "input-reset feedback-form__inp", 'placeholder' => "Ваш телефон", 'type' => 'tel', 'data-tel-input' => '']); ?>
-        <?= $form->field($contact, 'comment', ['template' => '{input}', 'options' => ['tag' => false]])->textarea(['cols' => '30', 'rows' => '5', 'class' => "input-reset feedback-form__area", 'placeholder' => "Комментарий"]); ?>
+        <?= $form->field($contact, 'name', ['template' => '{input}', 'options' => ['tag' => false]])->textInput(['id' => false, 'class' => "input-reset feedback-form__inp", 'placeholder' => "Ваше имя", 'type' => 'text']); ?>
+        <?= $form->field($contact, 'phone', ['template' => '{input}', 'options' => ['tag' => false]])->textInput(['id' => false, 'class' => "input-reset feedback-form__inp", 'placeholder' => "Ваш телефон", 'type' => 'tel', 'data-tel-input' => '']); ?>
+        <?= $form->field($contact, 'comment', ['template' => '{input}', 'options' => ['tag' => false]])->textarea(['id' => false, 'cols' => '30', 'rows' => '5', 'class' => "input-reset feedback-form__area", 'placeholder' => "Комментарий"]); ?>
 
         <div class="feedback-form__row">
             <div class="feedback-form__politics">
@@ -42,7 +42,7 @@ $contact = new Contact();
         <div class="footer__contact">
         <span class="footer__contact-title">Или свяжитесь с нами</span>
         <div class="footer__contact-wrapper">
-            <a class="footer__links footer__phone tel" href="tel:<?= Yii::$app->configManager->getItemValue('contactPhone'); ?>">
+            <a class="footer__links footer__phone tel" href="tel:<?= str_replace(" ", "", Yii::$app->configManager->getItemValue('contactPhone')); ?>">
                 <?= Yii::$app->configManager->getItemValue('contactPhone'); ?>
             </a>
             <a class="footer__links footer__mail" href="mailto://<?= Yii::$app->configManager->getItemValue('contactEmail'); ?>">

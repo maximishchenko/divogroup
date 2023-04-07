@@ -26,9 +26,9 @@ $contact = new Contact();
 
         <span class="feedback-form__title">Оставьте свои контакты и мы свяжемся с вами</span>
         
-        <?= $form->field($contact, 'name', ['template' => '{input}', 'options' => ['tag' => false]])->textInput(['class' => "input-reset feedback-form__inp", 'placeholder' => "Ваше имя", 'type' => 'text']); ?>
-        <?= $form->field($contact, 'phone', ['template' => '{input}', 'options' => ['tag' => false]])->textInput(['class' => "input-reset feedback-form__inp", 'placeholder' => "Ваш телефон", 'type' => 'tel', 'data-tel-input' => '']); ?>
-        <?= $form->field($contact, 'comment', ['template' => '{input}', 'options' => ['tag' => false]])->textarea(['cols' => '30', 'rows' => '5', 'class' => "input-reset feedback-form__area", 'placeholder' => "Комментарий"]); ?>
+        <?= $form->field($contact, 'name', ['template' => '{input}', 'options' => ['tag' => false]])->textInput(['id' => false, 'class' => "input-reset feedback-form__inp", 'placeholder' => "Ваше имя", 'type' => 'text']); ?>
+        <?= $form->field($contact, 'phone', ['template' => '{input}', 'options' => ['tag' => false]])->textInput(['id' => false, 'class' => "input-reset feedback-form__inp", 'placeholder' => "Ваш телефон", 'type' => 'tel', 'data-tel-input' => '']); ?>
+        <?= $form->field($contact, 'comment', ['template' => '{input}', 'options' => ['tag' => false]])->textarea(['id' => false, 'cols' => '30', 'rows' => '5', 'class' => "input-reset feedback-form__area", 'placeholder' => "Комментарий"]); ?>
 
         <div class="feedback-form__row">
 

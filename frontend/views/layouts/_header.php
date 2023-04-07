@@ -6,7 +6,7 @@
         </a>
 
         <div class="header__links">
-          <a class="header__phone link" href="tel:<?= Yii::$app->configManager->getItemValue('contactPhone'); ?>">
+          <a class="header__phone link" href="tel:<?= str_replace(" ", "", Yii::$app->configManager->getItemValue('contactPhone')); ?>">
             <span class="header__phone-icon">
               <svg class="call-i">
                 <use xlink:href="img/sprite.svg#call"></use>
@@ -16,7 +16,7 @@
               <?= Yii::$app->configManager->getItemValue('contactPhone'); ?>
             </span>
           </a>
-          <button type="button" class="feedback button-pr btn-reset" type="button">Связаться с нами</button>
+          <button type="button" class="feedback button-pr btn-reset">Связаться с нами</button>
         </div>
       </div>
     </div>

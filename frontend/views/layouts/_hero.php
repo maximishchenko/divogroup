@@ -28,7 +28,7 @@ $contact = new Contact();
                 <!-- <input class="input-reset hero__input tel" data-tel-input type="tel" placeholder="+7 (999) 999-99-99"> -->
                 <!-- <button class="btn-reset button-pr" type="button">Начать</button> -->
                 
-                <?= $form->field($contact, 'phone', ['template' => '{input}'])->textInput(['class' => "input-reset hero__input tel", 'placeholder' => "+7 (999) 999-99-99", 'type' => 'tel', 'data-tel-input' => '']) ?>
+                <?= $form->field($contact, 'phone', ['template' => '{input}'])->textInput(['id' => false, 'class' => "input-reset hero__input tel", 'placeholder' => "+7 (999) 999-99-99", 'type' => 'tel', 'data-tel-input' => '']) ?>
                 <?= Html::submitButton('Начать', ['class' => 'btn-reset button-pr'])?>
             </div>
         <?php ActiveForm::end(); ?>
