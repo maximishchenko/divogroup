@@ -10,6 +10,7 @@ $this->title = Yii::$app->configManager->getItemValue('seoDefaultTitle');
 <?= $this->render('//layouts/_card', ['articles' => $articles]); ?>
 <?= $this->render('//layouts/_work', ['jobItems' => $jobItems]); ?>
 <?= $this->render('//layouts/_document', ['documents' => $documents]); ?>
+<?= $this->render('//layouts/_calc'); ?>
 <?= $this->render('//layouts/_room'); ?>
 <?= $this->render('//layouts/_review', ['reviews' => $reviews]); ?>
 <?= $this->render('//layouts/_apartment', ['apartments' => $apartments]); ?>
