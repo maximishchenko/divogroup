@@ -1088,6 +1088,7 @@ a {
 .feedback-form__inp:invalid {
   background: red;
 }
+
 .feedback-form__row {
   margin-top: var(--size-s);
   display: -webkit-box;
