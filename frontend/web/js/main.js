@@ -1245,6 +1245,11 @@ document.querySelectorAll('.feedback').forEach(el => el.addEventListener('click'
   new graph_modal__WEBPACK_IMPORTED_MODULE_4__["default"]().open('feedback');
 }));
 
+const modalSend = new graph_modal__WEBPACK_IMPORTED_MODULE_4__["default"]();
+document.querySelectorAll('.feedback').forEach(el => el.addEventListener('click', function (e) {
+  new graph_modal__WEBPACK_IMPORTED_MODULE_4__["default"]().open('feedback');
+}));
+
 
   const onScrollHeader = () => {
     // объявляем основную функцию onScrollHeader
@@ -1276,6 +1281,22 @@ document.querySelectorAll('.feedback').forEach(el => el.addEventListener('click'
   };
 
   onScrollHeader(); // вызываем основную функцию onScrollHeader
+
+  
+document.getElementById('transfer__btn').addEventListener('click', function(){
+  let transferInp = document.getElementById('transfer__inp').value;
+  let transferModal = document.getElementById('transfer__modal-inp');
+
+  transferModal.value = transferInp;
+});
+
+document.getElementById('transfer__btn').addEventListener('click', function(){
+  let transferInp = document.getElementById('transfer__inp').value;
+  let transferModal = document.getElementById('transfer__modal-inp');
+
+  transferModal.value = transferInp;
+});
+
 
 
 /***/ }),
