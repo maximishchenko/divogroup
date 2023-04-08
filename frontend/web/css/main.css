@@ -282,6 +282,10 @@ a {
     background: var(--dark-color);
   }
 }
+.button-second:disabled {
+  background: var(--gray-color);
+  color: var(--dark-color);
+}
 
 .button-third {
   padding: 1.3rem 2.6rem;
@@ -1077,6 +1081,12 @@ a {
   display: flex;
   background: var(--gray-color);
   border-radius: 20px;
+}
+.feedback-form__inp:valid:focus {
+  background: rgb(134, 134, 134);
+}
+.feedback-form__inp:invalid {
+  background: red;
 }
 .feedback-form__row {
   margin-top: var(--size-s);
