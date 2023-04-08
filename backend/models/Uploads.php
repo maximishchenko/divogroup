@@ -108,7 +108,7 @@ class Uploads extends \yii\db\ActiveRecord
                 if ($this->validate()) {
                         $this->fileItem = UploadedFile::getInstance($this, 'fileItem');
                         if (isset($this->fileItem) && !empty($this->fileItem)) {
-                            $file = self::$frontendPath . self::UPLOAD_PATH . uniqid() . '-' . $this->fileItem->baseName . '.' . $this->fileItem->extension;
+                            $file = self::$frontendPath . self::UPLOAD_PATH . uniqid() . '-' . str_replace(" ", "", $this->fileItem->baseName) . '.' . $this->fileItem->extension;
                             if(!$this->isNewRecord && $this->file_name) {
                                 $filePath = self::$frontendPath . self::UPLOAD_PATH . $this->file_name;
                                 if(file_exists($filePath) && is_file($filePath)) {

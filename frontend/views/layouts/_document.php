@@ -29,7 +29,7 @@ use backend\models\Uploads;
           <picture>
             <source srcset="img/doc.avif" type="image/avif">
             <source srcset="img/doc.webp" type="image/webp">
-            <img src="img/doc.png" class="image" width="" height="" alt="">
+            <img src="img/doc.png" class="image" width="" height="" alt="Документы">
           </picture>
         </div>
       </div>

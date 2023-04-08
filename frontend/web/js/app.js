@@ -136,10 +136,53 @@ $('#feedback_form').on('beforeSubmit', function (e) {
 });
 
 
+$('#feedback_form_modal').on('beforeSubmit', function (e) {
+  var form = $(this);
+  var formData = form.serialize();
+  $.ajax({
+    url: form.attr('action'),
+    type: form.attr('method'),
+    dataType: "JSON",
+    data: new FormData(this),
+    processData: false,
+    contentType: false,
+    beforeSend: function () {
+          
+      const el = document.querySelector('#contact_modal');
+      el.classList.remove("is-open");
+      // $('#hero_form').hide();
+      // $('#######').show();
+    },
+    complete: function () {
+      // graph-modal is-open
+        // $()
+        $('#feedback_form_modal').find('input').val('');
+        $('#feedback_form_modal').find('textarea').val('');
+        alert("Заебцы");
+        // $('.help-block').html('');
+        // document.getElementById('review_rating_popup').reset();
+        // document.getElementById('preview').innerHTML = "";
+    },
+    error: function () {
+    }
+  });
+}).on('submit', function (e) {
+  e.preventDefault();
+});
+
+
 $(".feedback-form__checkbox").click(function() {
   if (($(this).prop("checked"))) {
       $("#callback_submit_btn").removeAttr("disabled");
   } else {
       $("#callback_submit_btn").attr("disabled", "disabled");
+  }
+})
+
+$(".feedback-form__checkbox_modal").click(function() {
+  if (($(this).prop("checked"))) {
+      $("#callback_submit_btn_modal").removeAttr("disabled");
+  } else {
+      $("#callback_submit_btn_modal").attr("disabled", "disabled");
   }
 })
