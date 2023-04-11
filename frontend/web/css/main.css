@@ -1620,4 +1620,43 @@ a {
   stroke-width: 2px;
 }
 
+
+.graph-modal__container-politics {
+  max-width: 1000px;
+}
+.graph-modal__container-politics ol {
+  list-style: none;
+  counter-reset: li;
+}
+.graph-modal__container-politics li:before {
+  counter-increment: li;
+  content: counters(li, ".") ". ";
+}
+
+.politics__headline {
+  font-family: "Overpass";
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--dark-color);
+}
+.politics__list {
+  padding-left: 0;
+}
+.politics__list-title {
+  font-family: "Overpass";
+  font-weight: bold;
+  margin-bottom: var(--size-m);
+  line-height: 140%;
+  color: var(--dark-color);
+}
+.politics__list-des {
+  font-family: "Inter", sans-serif;
+  font-weight: normal;
+  margin-top: var(--size-s);
+  padding-left: 0;
+}
+.politics__list-des li {
+  margin-bottom: var(--size-s);
+}
+
 /*# sourceMappingURL=main.css.map */

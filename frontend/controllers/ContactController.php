@@ -14,11 +14,14 @@ class ContactController extends BaseController
 
         if (Yii::$app->request->isAjax) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return "Мы с вами свяжемся";
+                echo "success";
             } else {
-                return "Что-то пошло не так";
+                echo "error";
             }
         }
-
+        else {
+            echo "not ajax request";
+        }
+        exit(1);
     }
 }

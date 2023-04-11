@@ -1,5 +1,22 @@
 
+let feedbackModal = new GraphModal();
+let policyModal = new GraphModal();
+let thanksModalItem = new GraphModal();
+
 document.addEventListener("DOMContentLoaded", function () {
+
+    // Feedback modal event
+    document.querySelectorAll('.feedback').forEach(el => el.addEventListener('click', function (e) {
+      if (policyModal.isOpen == true) {
+        policyModal.close();
+      }
+      if (thanksModalItem.isOpen == true) {
+        thanksModalItem.close();
+      }
+      feedbackModal.open('feedback');
+    }));
+
+    // Start phone masked input
     var phoneInputs = document.querySelectorAll('input[data-tel-input]');
   
     var getInputNumbersValue = function (input) {
@@ -74,115 +91,77 @@ document.addEventListener("DOMContentLoaded", function () {
       phoneInput.addEventListener('input', onPhoneInput, false);
       phoneInput.addEventListener('paste', onPhonePaste, false);
     }
-})
+    // End phone masked input
 
-    
-$('#hero_form').on('beforeSubmit', function (e) {
-  var form = $(this);
-  var formData = form.serialize();
-  $.ajax({
-    url: form.attr('action'),
-    type: form.attr('method'),
-    dataType: "JSON",
-    data: new FormData(this),
-    processData: false,
-    contentType: false,
-    beforeSend: function () {
-      // $('#hero_form').hide();
-      // $('#######').show();
-    },
-    complete: function () {
-        $('#hero_form').find('input').val('');
-        alert("Заебцы");
-        // $('.help-block').html('');
-        // document.getElementById('review_rating_popup').reset();
-        // document.getElementById('preview').innerHTML = "";
-    },
-    error: function () {
-    }
-  });
-}).on('submit', function (e) {
-  e.preventDefault();
-});
+    // Begin Ajax Form Submit
+    // Находит формы. Для каждой формы прослушивает событие отправки формы
+    // Ко всем формам в модальных окнах необходимо добавить data-аттрибут data-modal-form, 
+    // т.к. необходимо их скрывать при отправке, но такая необходимость отсутствует у inline-форм
+    // Если форма содержит data-attribute со значением data-modal-form, то форма после отправки будет
+    // скрыта и показано модальное окно, если аттрибута не существует - просто модальное окно 
+    let form = document.querySelectorAll('form');
+    form.forEach(el =>
+      el.addEventListener('submit', function(event) {
+        event.preventDefault();
+        let formData = new FormData(this);
+        let formAction = this.action;
+        let formMethod = this.method;
+        let request = new XMLHttpRequest();
+        request.open(formMethod,formAction);
+        request.setRequestHeader("X-CSRF-TOKEN", document.head.querySelector("[name=csrf-token]").content);
+        request.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        request.send(formData);
+        
+        this.reset();
+        let isModalForm = this.getAttribute('data-modal-form');
+        
+        if (isModalForm != null) {
+          feedbackModal.close();
+        }
+        thanksModalItem.open("successfully");
 
-
-$('#feedback_form').on('beforeSubmit', function (e) {
-  var form = $(this);
-  var formData = form.serialize();
-  $.ajax({
-    url: form.attr('action'),
-    type: form.attr('method'),
-    dataType: "JSON",
-    data: new FormData(this),
-    processData: false,
-    contentType: false,
-    beforeSend: function () {
-      // $('#hero_form').hide();
-      // $('#######').show();
-    },
-    complete: function () {
-        $('#feedback_form').find('input').val('');
-        $('#feedback_form').find('textarea').val('');
-        alert("Заебцы");
-        // $('.help-block').html('');
-        // document.getElementById('review_rating_popup').reset();
-        // document.getElementById('preview').innerHTML = "";
-    },
-    error: function () {
-    }
-  });
-}).on('submit', function (e) {
-  e.preventDefault();
-});
+        request.addEventListener('load', () => {
+          if (request.status === 200) {
+            console.log('Form Submit Successfully');
+          } else {
+            console.error('Error submitting form');
+          }
+        });
+        request.addEventListener('error', () => {
+          console.error('Error submitting form');
+        });
+      })
+    );
+    // End Ajax Form Submit
 
 
-$('#feedback_form_modal').on('beforeSubmit', function (e) {
-  var form = $(this);
-  var formData = form.serialize();
-  $.ajax({
-    url: form.attr('action'),
-    type: form.attr('method'),
-    dataType: "JSON",
-    data: new FormData(this),
-    processData: false,
-    contentType: false,
-    beforeSend: function () {
-          
-      const el = document.querySelector('#contact_modal');
-      el.classList.remove("is-open");
-      // $('#hero_form').hide();
-      // $('#######').show();
-    },
-    complete: function () {
-      // graph-modal is-open
-        // $()
-        $('#feedback_form_modal').find('input').val('');
-        $('#feedback_form_modal').find('textarea').val('');
-        alert("Заебцы");
-        // $('.help-block').html('');
-        // document.getElementById('review_rating_popup').reset();
-        // document.getElementById('preview').innerHTML = "";
-    },
-    error: function () {
-    }
-  });
-}).on('submit', function (e) {
-  e.preventDefault();
-});
+    // Start destroy thanks modal
+    let thanksModal = document.querySelectorAll('[data-thanks-modal]'); 
+    thanksModal.forEach(el => el.addEventListener('click', function() {
+      thanksModalItem.close();
+    }));
+    // End destroy thanks modal
 
+    // Start policy modal
+    document.querySelectorAll('.politics').forEach(el => el.addEventListener('click', function (e) {
+      if (feedbackModal.isOpen == true) {
+        feedbackModal.close();
+      }
+      policyModal.open('politics');
+    }));
+    // End policy modal
 
-$(".feedback-form__checkbox").click(function() {
-  if (($(this).prop("checked"))) {
-      $("#callback_submit_btn").removeAttr("disabled");
-  } else {
-      $("#callback_submit_btn").attr("disabled", "disabled");
-  }
-})
+    // Start agreement button activation by checkbox
+    let agreementCheckbox = document.querySelectorAll('input[data-agreement-checkbox]');
+    agreementCheckbox.forEach(el => el.addEventListener('change', function() {
+      let parentForm = this.form;
+      let submitButton = parentForm.querySelector('button[type="submit"]');
+      if (this.checked) {
+        submitButton.disabled = false;
+      } else {
+        submitButton.disabled = true;
+      }
+    }));
+    // End agreement button activation by checkbox
 
-$(".feedback-form__checkbox_modal").click(function() {
-  if (($(this).prop("checked"))) {
-      $("#callback_submit_btn_modal").removeAttr("disabled");
-  } else {
-      $("#callback_submit_btn_modal").attr("disabled", "disabled");
-  }
 })

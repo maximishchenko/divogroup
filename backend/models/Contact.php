@@ -32,6 +32,8 @@ class Contact extends \yii\db\ActiveRecord
             [['comment'], 'string'],
             [['created_at'], 'integer'],
             [['name', 'phone'], 'string', 'max' => 255],
+            [['phone', 'name'], 'required'],
+            [['name', 'comment'], 'safe'],
         ];
     }
 

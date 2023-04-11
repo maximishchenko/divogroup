@@ -53,8 +53,8 @@ class SiteController extends BaseController
 
     // }
 
-    public function actionPolicy()
-    {
-        return $this->render('policy');
-    }
+    // public function actionPolicy()
+    // {
+    //     return $this->renderPartial('policy');
+    // }
 }

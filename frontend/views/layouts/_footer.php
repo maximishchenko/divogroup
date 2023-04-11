@@ -28,9 +28,13 @@ $contact = new Contact();
         <div class="feedback-form__row">
             <div class="feedback-form__politics">
                 
-                <?= $form->field($contact, 'agreement', ['template' => '{input}', 'options' => ['tag' => false]])->checkbox(['id' => 'feedback__checkbox-f', 'class' => 'feedback-form__checkbox'], false); ?>
+                <?= $form->field($contact, 'agreement', ['template' => '{input}', 'options' => ['tag' => false]])->checkbox([
+                            'id' => 'feedback__checkbox-f',
+                            'class' => 'feedback-form__checkbox',
+                            'data-agreement-checkbox' => '',
+                        ], false); ?>
                 <label for="feedback__checkbox-f">
-                    Нажимая, вы соглашаетесь на обработку <a class="feedback-form__politic-link" href="<?= Url::toRoute('/policy'); ?>">Персональных
+                    Нажимая, вы соглашаетесь на обработку <a class="feedback-form__politic-link politics" href="javascript:void(0);">Персональных
                     данных</a>
                 </label>
             </div>
@@ -67,7 +71,7 @@ $contact = new Contact();
 
 <div class="footer__bot">
   <span>© <?= date('Y'); ?> DiVo group</span>
-  <a href="<?= Url::toRoute('/policy'); ?>">Политика конфиденциальности</a>
+  <a href="javascript:void(0);" class="politics">Политика конфиденциальности</a>
 </div>
 
 
