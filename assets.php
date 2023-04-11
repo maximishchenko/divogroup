@@ -15,9 +15,10 @@ return [
             'class' => 'frontend\assets\AppAsset',
             'basePath' => '@webroot/',
             'baseUrl' => '@web/',
-            // 'jsOptions' => [
-            //     'async' => 'async',
-            // ],
+            'jsOptions' => [
+                'async' => 'async',
+                'defer' => 'defer',
+            ],
             'js' => 'js/all.min.js',
             'css' => 'css/all.min.css',
             'depends' => [
