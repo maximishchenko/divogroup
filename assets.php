@@ -18,8 +18,8 @@ return [
             // 'jsOptions' => [
             //     'async' => 'async',
             // ],
-            'js' => 'assets/all-{hash}.min.js',
-            'css' => 'assets/all-{hash}.min.css',
+            'js' => 'js/all.min.js',
+            'css' => 'css/all.min.css',
             'depends' => [
             ],
         ],
