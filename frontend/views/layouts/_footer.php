@@ -73,8 +73,3 @@ $contact = new Contact();
   <span>© <?= date('Y'); ?> DiVo group</span>
   <a href="javascript:void(0);" class="politics">Политика конфиденциальности</a>
 </div>
-
-
-<script>
-
-</script>

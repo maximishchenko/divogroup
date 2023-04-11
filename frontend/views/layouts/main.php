@@ -6,10 +6,6 @@
 use frontend\assets\AppAsset;
 use frontend\models\Script;
 use yii\bootstrap5\Html;
-// use yii\bootstrap5\Nav;
-// use yii\bootstrap5\NavBar;
-// use yii\bootstrap5\Breadcrumbs;
-// use common\widgets\Alert;
 
 AppAsset::register($this);
 ?>

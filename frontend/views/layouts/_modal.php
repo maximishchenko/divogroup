@@ -19,7 +19,6 @@ $contact = new Contact();
         'action' => ['/contact'],
         'method' => 'post',
         'options' => [
-          // 'onsubmit' => 'sendAjaxForm(this); return false;',
           'class' => "feedback-form",
           'autocomplete' => 'off',
           'data-modal-form' => '',

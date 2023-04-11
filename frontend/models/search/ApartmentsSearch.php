@@ -60,23 +60,6 @@ class ApartmentsSearch extends Apartments
             // $query->where('0=1');
             return $dataProvider;
         }
-
-        // grid filtering conditions
-        // $query->andFilterWhere([
-        //     'id' => $this->id,
-        //     'price' => $this->price,
-        //     'rooms_amount' => $this->rooms_amount,
-        //     'square' => $this->square,
-        //     'sort' => $this->sort,
-        //     'status' => $this->status,
-        //     'created_at' => $this->created_at,
-        //     'updated_at' => $this->updated_at,
-        //     'created_by' => $this->created_by,
-        //     'updated_by' => $this->updated_by,
-        // ]);
-
-        // $query->andFilterWhere(['like', 'address', $this->address]);
-
         return $dataProvider;
     }
 }

@@ -22,15 +22,7 @@ class Contact extends backendContact
                 },
             ],
         ];
-    } 
-
-    // public function rules()
-    // {
-    //     return [
-    //         [['phone', 'name'], 'required'],
-    //         [['name', 'comment'], 'safe'],
-    //     ];
-    // }
+    }
 
     public function attributeLabels()
     {

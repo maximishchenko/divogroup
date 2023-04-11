@@ -10,8 +10,6 @@ use frontend\models\search\JobItemSearch;
 use frontend\models\search\ReviewSearch;
 use Yii;
 use frontend\controllers\BaseController;
-use frontend\models\Contact;
-use frontend\models\search\ArticleSearch;
 
 /**
  * Site controller
@@ -47,14 +45,4 @@ class SiteController extends BaseController
             'documents' => $documents,
         ]);
     }
-
-    // public function actionContact()
-    // {
-
-    // }
-
-    // public function actionPolicy()
-    // {
-    //     return $this->renderPartial('policy');
-    // }
 }

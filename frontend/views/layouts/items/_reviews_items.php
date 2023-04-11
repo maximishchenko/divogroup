@@ -2,7 +2,6 @@
 
 use backend\models\Review;
 ?>
-<!-- <div class="swiper-slide"> -->
   <div class="reviews__el">
     <div class="reviews__title">
       <span class="reviews__img" style="background-image: url('<?= Review::UPLOAD_PATH . $model->image; ?>');"></span>
@@ -17,4 +16,3 @@ use backend\models\Review;
         <?= $model->review; ?>
     </p>
   </div>
-<!-- </div> -->
