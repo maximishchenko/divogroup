@@ -15,7 +15,7 @@ $contact = new Contact();
             Сдавайте квартиру выгодно и получайте стабильный доход. Все заботы по сопровождению мы возьмем на себя.
         </p>
             <div class="hero__input-wrapper">
-                <?= Html::activeInput('text', $contact, 'phone', ['template' => '{input}', 'id' => "transfer__inp", 'class' => "input-reset hero__input tel", 'placeholder' => "+7 (999) 999-99-99", 'type' => 'tel', 'data-tel-input' => '']) ?>
+                <?= Html::activeInput('text', $contact, 'phone', ['data-input-keyup' => '', 'id' => "transfer__inp", 'class' => "input-reset hero__input tel", 'placeholder' => "+7 (999) 999-99-99", 'type' => 'tel', 'data-tel-input' => '']) ?>
                 <?= Html::button("Начать", ['class' => 'btn-reset button-pr feedback', "id" => "transfer__btn"])?>
             </div>
       </div>

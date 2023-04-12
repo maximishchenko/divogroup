@@ -14,7 +14,22 @@ document.addEventListener("DOMContentLoaded", function () {
         thanksModalItem.close();
       }
       feedbackModal.open('feedback');
+      document.getElementById("callback_submit_btn_modal").disabled = true;
+      
+      let oldHTMLFocus = HTMLElement.prototype.focus;
+      HTMLElement.prototype.focus = function () {
+          let nameInput = document.getElementById("transfer__modal-inp-name");
+          oldHTMLFocus.apply(nameInput, arguments);
+      };
     }));
+
+    // Open Feedback modal paste phone number
+    document.getElementById('transfer__btn').addEventListener('click', function () {
+      let transferInp = document.getElementById('transfer__inp').value;
+      let transferModal = document.getElementById('transfer__modal-inp');
+      transferModal.value = transferInp;
+      document.getElementById('transfer__inp').value = "";
+    });
 
     // Start phone masked input
     var phoneInputs = document.querySelectorAll('input[data-tel-input]');
@@ -150,6 +165,18 @@ document.addEventListener("DOMContentLoaded", function () {
       policyModal.open('politics');
     }));
     // End policy modal
+
+    // Start enter phone press Enter
+    // При вводе номера телефона показывает форму обратной связи по нажатию Enter
+    // Для реализации добавить data-input-keyup к input и id transfer__btn к button
+    document.querySelectorAll("input[data-input-keyup]").forEach(el => el.addEventListener("keyup", function(event) {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+            document.getElementById("transfer__btn").click();
+        }
+      })
+    );
+    // End enter phone press Enter    
 
     // Start agreement button activation by checkbox
     let agreementCheckbox = document.querySelectorAll('input[data-agreement-checkbox]');

@@ -1284,11 +1284,6 @@ if (bodyWidth < 768) {
   onScrollHeader(); // вызываем основную функцию onScrollHeader
 }
 ;
-document.getElementById('transfer__btn').addEventListener('click', function () {
-  let transferInp = document.getElementById('transfer__inp').value;
-  let transferModal = document.getElementById('transfer__modal-inp');
-  transferModal.value = transferInp;
-});
 
 //
 

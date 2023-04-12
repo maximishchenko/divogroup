@@ -27,7 +27,18 @@ $contact = new Contact();
 
       <span class="feedback-form__title">Оставьте свои контакты и мы свяжемся с вами</span>
 
-      <?= $form->field($contact, 'name', ['template' => '{input}', 'options' => ['tag' => false]])->textInput(['id' => false, 'class' => "input-reset feedback-form__inp", 'placeholder' => "Ваше имя", 'type' => 'text', 'required' => true]); ?>
+      <?= $form->field($contact, 'name', [
+            'template' => '{input}',
+            'options' => [
+              'tag' => false
+            ]])->textInput([
+              'id' => 'transfer__modal-inp-name',
+              'autofocus' => true,
+              'class' => "input-reset feedback-form__inp",
+              'placeholder' => "Ваше имя",
+              'type' => 'text',
+              'required' => true
+          ]); ?>
       <?= $form->field($contact, 'phone', ['template' => '{input}', 'options' => ['tag' => false]])->textInput(['id' => "transfer__modal-inp", 'class' => "input-reset feedback-form__inp", 'placeholder' => "Ваш телефон", 'type' => 'tel', 'data-tel-input' => '', 'required' => true]); ?>
       <?= $form->field($contact, 'comment', ['template' => '{input}', 'options' => ['tag' => false]])->textarea(['id' => false, 'cols' => '30', 'rows' => '5', 'class' => "input-reset feedback-form__area", 'placeholder' => "Комментарий"]); ?>
 
@@ -46,7 +57,7 @@ $contact = new Contact();
           </label>
         </div>
 
-        <?= Html::submitButton('Отправить', ['class' => 'btn-reset button-second', 'id' => 'callback_submit_btn_modal', 'disabled' => true]) ?>
+        <?= Html::submitButton('Отправить', ['class' => 'btn-reset button-second', 'id' => 'callback_submit_btn_modal']) ?>
       </div>
       <?php ActiveForm::end(); ?>
     </div>

@@ -17,16 +17,14 @@ class AppAsset extends AssetBundle
         'css/main.css',
     ];
     public $js = [
-        // 'jquery-3.6.4.min.js',
         'js/graph-modal.min.js',
-        "js/main.js",
         'js/app.js',
+        "js/main.js",
     ];
     public $jsOptions = [
         'defer' => true,
         'position' => \yii\web\View::POS_HEAD
     ];
     public $depends = [
-        // 'yii\web\YiiAsset',
     ];
 }
