@@ -4,7 +4,7 @@ use yii\widgets\ListView;
 <section class="reviews ptb-xxl">
     <div class="container">
       <div class="reviews__wrapper">
-        <h2 class="section-title">Клиенты о нас</h2>
+        <h2 class="section-title">Посмотрите отзывы наших клиентов</h2>
         <div class="swiper reviews-swiper">
           <div class="swiper-button-next reviews-btn-next"></div>
           <div class="swiper-button-prev reviews-btn-prev"></div>

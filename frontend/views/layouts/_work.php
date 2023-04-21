@@ -6,7 +6,7 @@ use yii\widgets\ListView;
       <div class="section-head">
         <h2 class="centered section-title cards__title">Как мы работаем?</h2>
         <p class="centered section-des cards__des">
-          Наша цель — довольные жильцы и спокойные собственники. Как нам это удается?</p>
+        Наша цель — счастливые жильцы и спокойные владельцы объектов недвижимости. Мы помогаем решить задачи каждого и сохранить комфортную коммуникацию.</p>
       </div>
       <div class="works__wrapper">
 
