@@ -1,6 +1,3 @@
-<?php
-
-?>
 <section class="cards mt-xxl">
     <div class="container">
       <div class="cards__wrapper">
