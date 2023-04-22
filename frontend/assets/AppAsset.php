@@ -14,6 +14,7 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/vendor.css',
         'css/graph-modal.min.css',
+        'css/app.css',
         'css/main.css',
     ];
     public $js = [
