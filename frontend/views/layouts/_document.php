@@ -27,8 +27,6 @@ use backend\models\Uploads;
       </div>
       <div class="doc-info__img-wrapper">
         <picture>
-          <source srcset="img/doc.avif" type="image/avif">
-          <source srcset="img/doc.webp" type="image/webp">
           <img src="img/doc.png" class="image" width="" height="" alt="Документы">
         </picture>
       </div>
