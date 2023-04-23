@@ -1,6 +1,7 @@
 <?php
 
 use backend\models\Article;
+use yii\helpers\Html;
 
 ?>
 <div class="cards__el" style="background-image: url(<?= Article::UPLOAD_PATH . $article->image; ?>);">
@@ -19,7 +20,7 @@ use backend\models\Article;
     </div>
     <div class="cards__el-hide">
       <p class="text" data-simplebar>
-        <?= $article->description; ?>
+        <?= Html::decode($article->description); ?>
       </p>
     </div>
 </div>

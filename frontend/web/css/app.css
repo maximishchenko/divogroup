@@ -2,4 +2,4 @@
 .button-second:disabled {
     background: var(--gray-color);
     color: var(--dark-color);
-  }
+}
