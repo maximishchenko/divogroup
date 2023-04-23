@@ -3,3 +3,7 @@
     background: var(--gray-color);
     color: var(--dark-color);
 }
+.button-second:disabled:hover {
+    background: var(--gray-color);
+    color: var(--light-colo);
+}
