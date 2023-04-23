@@ -19,9 +19,9 @@ use yii\helpers\Html;
       </button>
     </div>
     <div class="cards__el-hide">
-      <p class="text" data-simplebar>
+      <div class="text" data-simplebar>
         <?= Html::decode($article->description); ?>
-      </p>
+      </div>
     </div>
 </div>
 <?php 
