@@ -599,7 +599,7 @@ a {
   gap: var(--size-m);
 }
 .doc-info__wrapper .section-title {
-  width: 50%;
+  width: 80%;
 }
 .doc-info__wrapper .section-des {
   width: 60%;
