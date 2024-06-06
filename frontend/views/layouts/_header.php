@@ -1,10 +1,22 @@
-
+<?php
+use yii\helpers\Url;
+?>
     <div class="container">
       <div class="header__wrapper">
         <a href="<?= Yii::$app->homeUrl; ?>" class="header__logo">
           <img src="img/logo.svg" alt="svg">
         </a>
-
+          <div class="header__nav">
+            <a class="header__link" href="<?= Url::toRoute('/'); ?>">
+            Субаренда 
+            </a>
+            <a class="header__link" href="<?= Url::toRoute('/rent'); ?>">
+              Аренда
+            </a>
+            <a class="header__link" href="<?= Url::toRoute('/#reviews'); ?>">
+              Отзывы
+            </a>
+          </div>
         <div class="header__links">
           <a class="header__phone link" href="tel:<?= str_replace(" ", "", Yii::$app->configManager->getItemValue('contactPhone')); ?>">
             <span class="header__phone-icon">

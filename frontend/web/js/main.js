@@ -4369,59 +4369,62 @@
   
   // Калькулятор
   
-  let slider = document.getElementById('slider');
-  nouislider__WEBPACK_IMPORTED_MODULE_3___default().create(slider, {
-    start: [60000],
-    connect: true,
-    range: {
-      'min': 20000,
-      'max': 300000
-    },
-    step: 1000,
-    tooltips: [true]
-  });
-  
+ 
   //
   
-  slider.noUiSlider.on('update', function (value) {
-    const communalInp = document.getElementById('inp-0'); // ЖКХ инпут
-    let valueM = Math.round(value);
-    function calc() {
-      const tool = document.querySelector('.noUi-tooltip'),
-        rent = document.querySelector('.rent-val'),
-        //Стоимость аренды
-        commission = document.querySelector('.commission-val'),
-        //Комиссия
-        tax = document.querySelector('.tax-val'),
-        //Налог
-        communal = document.getElementById('inp-0').value,
-        // ЖКХ
-        income = document.querySelector('.income-val'); //Доход
-  
-      let commissionM = valueM * (10 / 100),
-        taxM = valueM * (6 / 100);
-  
-      // Значение для "Cтоимость аренды"
-      rent.textContent = valueM.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-  
-      // Значение для "Комиссия"
-      commission.textContent = commissionM.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-  
-      // Значение для "Налог"
-      tax.textContent = taxM.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-  
-      // Расчет дохода
-      let incomeCalc = valueM - commissionM - taxM - communal;
-  
-      // Значение для "Доход"
-      income.textContent = incomeCalc.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-      tool.innerHTML = valueM.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + ' ₽';
-    }
-    calc();
-    communalInp.oninput = function () {
+  if(document.getElementById('slider')) {
+    let slider = document.getElementById('slider');
+    nouislider__WEBPACK_IMPORTED_MODULE_3___default().create(slider, {
+      start: [60000],
+      connect: true,
+      range: {
+        'min': 20000,
+        'max': 300000
+      },
+      step: 1000,
+      tooltips: [true]
+    });
+
+    slider.noUiSlider.on('update', function (value) {
+      const communalInp = document.getElementById('inp-0'); // ЖКХ инпут
+      let valueM = Math.round(value);
+      function calc() {
+        const tool = document.querySelector('.noUi-tooltip'),
+          rent = document.querySelector('.rent-val'),
+          //Стоимость аренды
+          commission = document.querySelector('.commission-val'),
+          //Комиссия
+          tax = document.querySelector('.tax-val'),
+          //Налог
+          communal = document.getElementById('inp-0').value,
+          // ЖКХ
+          income = document.querySelector('.income-val'); //Доход
+    
+        let commissionM = valueM * (10 / 100),
+          taxM = valueM * (6 / 100);
+    
+        // Значение для "Cтоимость аренды"
+        rent.textContent = valueM.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    
+        // Значение для "Комиссия"
+        commission.textContent = commissionM.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    
+        // Значение для "Налог"
+        tax.textContent = taxM.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    
+        // Расчет дохода
+        let incomeCalc = valueM - commissionM - taxM - communal;
+    
+        // Значение для "Доход"
+        income.textContent = incomeCalc.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        tool.innerHTML = valueM.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + ' ₽';
+      }
       calc();
-    };
-  });
+      communalInp.oninput = function () {
+        calc();
+      };
+    });
+  }
   
   /*
   const modal = new GraphModal();

@@ -4,7 +4,6 @@ let policyModal = new GraphModal();
 let thanksModalItem = new GraphModal();
 
 document.addEventListener("DOMContentLoaded", function () {
-
     // Feedback modal event
     document.querySelectorAll('.feedback').forEach(el => el.addEventListener('click', function (e) {
       if (policyModal.isOpen == true) {
@@ -24,12 +23,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }));
 
     // Open Feedback modal paste phone number
-    document.getElementById('transfer__btn').addEventListener('click', function () {
-      let transferInp = document.getElementById('transfer__inp').value;
-      let transferModal = document.getElementById('transfer__modal-inp');
-      transferModal.value = transferInp;
-      document.getElementById('transfer__inp').value = "";
-    });
+    if( document.getElementById('transfer__btn')) {
+      document.getElementById('transfer__btn').addEventListener('click', function () {
+        let transferInp = document.getElementById('transfer__inp').value;
+        let transferModal = document.getElementById('transfer__modal-inp');
+        transferModal.value = transferInp;
+        document.getElementById('transfer__inp').value = "";
+      });
+    }
+
 
     // Start phone masked input
     var phoneInputs = document.querySelectorAll('input[data-tel-input]');

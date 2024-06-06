@@ -1727,4 +1727,38 @@ a {
 .politics__list-des li {
   margin-bottom: var(--size-s);
 }
+
+.rent-wrapper {
+  margin-top: 100px;
+}
+
+.header__nav a:not(:last-child){
+  margin-right: 20px;
+}
+
+.header__link {
+  color: var(--dark-color);
+}
+
+.header__link--dis {
+  opacity: .5;
+}
+
+@media (max-width: 576px) {
+  .header__nav {
+    order: 1;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  .rent-wrapper {
+    margin-top: 130px;
+  }
+
+  .header__wrapper {
+    flex-wrap: wrap;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */

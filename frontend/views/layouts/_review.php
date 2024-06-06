@@ -1,7 +1,7 @@
 <?php
 use yii\widgets\ListView;
 ?>
-<section class="reviews ptb-xxl">
+<section class="reviews ptb-xxl" id="reviews">
     <div class="container">
       <div class="reviews__wrapper">
         <h2 class="section-title">Посмотрите отзывы наших клиентов</h2>
