@@ -78,6 +78,7 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'rent' => 'rent/index',
                 'page-not-found' => 'error/page-not-found',
             ],
         ],
