@@ -14,4 +14,3 @@ $this->title = Yii::$app->configManager->getItemValue('seoDefaultTitle');
 <?= $this->render('//layouts/_room'); ?>
 <?= $this->render('//layouts/_review', ['reviews' => $reviews]); ?>
 <?= $this->render('//layouts/_apartment', ['apartments' => $apartments]); ?>
-<?= $this->render('//layouts/_modal'); ?>

@@ -58,6 +58,7 @@ AppAsset::register($this);
 </footer>
 
 </div>
+<?= $this->render('//layouts/_modal'); ?>
 
 <!-- Скрипты перед </body> -->
 <?php Script::getScripts(Script::BEFORE_END_BODY); ?>

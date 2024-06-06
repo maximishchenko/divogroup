@@ -4310,12 +4310,15 @@
   new (simple_parallax_js__WEBPACK_IMPORTED_MODULE_0___default())(image, {
     orientation: 'up'
   });
-  document.querySelectorAll('.cards__el-btn').forEach(el => el.addEventListener('click', function (e) {
-    let activElement = el.parentElement.parentElement;
-    let activeBtn = el.querySelector('.cross');
-    activElement.querySelector('.cards__el-hide').classList.toggle('cards__el-hide--active');
-    activeBtn.classList.toggle('cross--active');
-  }));
+  if(document.querySelector('.cards__el-btn')) {
+    document.querySelectorAll('.cards__el-btn').forEach(el => el.addEventListener('click', function (e) {
+      let activElement = el.parentElement.parentElement;
+      let activeBtn = el.querySelector('.cross');
+      activElement.querySelector('.cards__el-hide').classList.toggle('cards__el-hide--active');
+      activeBtn.classList.toggle('cross--active');
+    }));
+  }
+  
   const reviews = new swiper__WEBPACK_IMPORTED_MODULE_1__["default"]('.reviews-swiper', {
     slidesPerView: 4,
     loop: true,
@@ -4479,11 +4482,15 @@
     onScrollHeader(); // вызываем основную функцию onScrollHeader
   }
   ;
-  document.getElementById('transfer__btn').addEventListener('click', function () {
-    let transferInp = document.getElementById('transfer__inp').value;
-    let transferModal = document.getElementById('transfer__modal-inp');
-    transferModal.value = transferInp;
-  });
+
+  if(document.getElementById('transfer__btn')) {
+    document.getElementById('transfer__btn').addEventListener('click', function () {
+      let transferInp = document.getElementById('transfer__inp').value;
+      let transferModal = document.getElementById('transfer__modal-inp');
+      transferModal.value = transferInp;
+    });
+  }
+
   
   //
   
